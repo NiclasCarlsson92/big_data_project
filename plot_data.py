@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
-from get_data_female import new_data_f
-from get_data_male import new_data_m
+from tshirt_data_female import new_data_f
+from tshirt_data_male import new_data_m
 
 
 def plot_female():
@@ -17,7 +17,7 @@ def plot_male():
 
 
 def main():
-    #plot_female()
+    plot_female()
     plot_male()
 
 

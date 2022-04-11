@@ -3,14 +3,11 @@ import pandas as pd
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
 
-data_frame = pd.read_csv('./stock_data/male.csv')
-male_measures = data_frame[['stature', 'weightkg', 'chestcircumference', 'waistcircumference']]
-#male_measures.to_csv('clean_data/clean_male.csv')
-data_frame.dropna(inplace=True)
-new_data_m = pd.read_csv('./clean_data/clean_male.csv')
+new_data_m = pd.read_csv('./clean_data/tshirt_male.csv')
+new_data_m.dropna(inplace=True)
 new_data_m.drop(new_data_m.columns[0], axis=1, inplace=True)
-new_data_m.insert(4, column="size", value="-")
-new_data_m.insert(5, column="color", value="-")
+# new_data_m.insert(4, column="size", value="-")
+# new_data_m.insert(5, column="color", value="-")
 
 size = []
 color = []

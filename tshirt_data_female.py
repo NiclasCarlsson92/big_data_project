@@ -3,13 +3,11 @@ import pandas as pd
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
 
-data_frame = pd.read_csv('./stock_data/female.csv')
-
-data_frame.dropna(inplace=True)
-new_data_f = pd.read_csv('./clean_data/clean_female.csv')
+new_data_f = pd.read_csv('./clean_data/tshirt_female.csv')
+new_data_f.dropna(inplace=True)
 new_data_f.drop(new_data_f.columns[0], axis=1, inplace=True)
-new_data_f.insert(4, column="size", value="-")
-new_data_f.insert(5, column="color", value="-")
+# new_data_f.insert(4, column="size", value="-")
+# new_data_f.insert(5, column="color", value="-")
 
 size = []
 color = []
@@ -49,3 +47,4 @@ for chest, waist in zip(new_data_f['chestcircumference'], new_data_f['waistcircu
 
 new_data_f['size'] = size
 new_data_f['color'] = color
+

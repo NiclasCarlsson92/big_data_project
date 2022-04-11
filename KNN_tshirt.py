@@ -3,8 +3,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn import neighbors
 from sklearn.metrics import f1_score
-from get_data_female import new_data_f
-from get_data_male import new_data_m
+from tshirt_data_female import new_data_f
+from tshirt_data_male import new_data_m
 
 
 def main():
@@ -70,6 +70,7 @@ def main():
     pred = KNN_model.predict(X_val)
     accuracy = sum(y_val == pred) / (y_val.shape[0]) * 100
 
+    print('Using the optimum K value', best_k)
     if user_sex == 0:
         print(f'Accuracy: {int(accuracy)}%')
         print(new_data_m.sort_values(by=['nearest']).head(best_k))
