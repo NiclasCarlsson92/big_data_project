@@ -54,7 +54,7 @@ def main():
         clf.fit(X_train, y_train)
         pred = clf.predict(X_val)
         f = f1_score(y_val, pred, average='macro')
-        print(k, '=>', f)
+        print('k)', k, '=>', f)
         f1_list.append(f)
         k_list.append(k)
 
@@ -72,10 +72,10 @@ def main():
 
     print('Using the optimum K value', best_k)
     if user_sex == 0:
-        print(f'Accuracy: {int(accuracy)}%')
+        print(f'Accuracy: {int(accuracy)}%\n')
         print(new_data_m.sort_values(by=['nearest']).head(best_k))
     else:
-        print(f'Accuracy: {int(accuracy)}%')
+        print(f'Accuracy: {int(accuracy)}%\n')
         print(new_data_f.sort_values(by=['nearest']).head(best_k))
 
 

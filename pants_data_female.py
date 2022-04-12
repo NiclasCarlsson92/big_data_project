@@ -1,6 +1,8 @@
 import pandas as pd
 
 pants_data_f = pd.read_csv('./clean_data/pants_female.csv')
+pd.set_option('display.max_rows', None)
+pd.set_option('display.max_columns', None)
 pants_data_f.dropna(inplace=True)
 pants_data_f.drop(pants_data_f.columns[0], axis=1, inplace=True)
 

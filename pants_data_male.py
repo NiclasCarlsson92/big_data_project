@@ -1,6 +1,8 @@
 import pandas as pd
 
 pants_data_m = pd.read_csv('./clean_data/pants_male.csv')
+pd.set_option('display.max_rows', None)
+pd.set_option('display.max_columns', None)
 
 size = []
 color = []
@@ -51,9 +53,4 @@ for crotch, waist in zip(pants_data_m['crotchheight'], pants_data_m['waistcircum
     elif crotch < 1500:
         size.append('xxxxl')
         color.append('red')
-
-# pants_data_m.dropna(inplace=True)
-# pants_data_m.drop(pants_data_m.columns[0], axis=1, inplace=True)
-# pants_data_m['size'] = size
-# pants_data_m['color'] = color
 
