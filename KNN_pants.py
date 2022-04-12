@@ -47,4 +47,4 @@ distances = distances[:check_nearest]
 counter = Counter([d['size'] for d in distances])
 print(check_nearest, 'nearest neighbours')
 print(counter.most_common(check_nearest))
-print('My KNN predicts this size for you: ', counter.most_common(1)[0][0].upper())
+print('My KNN predicts this pants size for you: ', counter.most_common(1)[0][0].upper())
