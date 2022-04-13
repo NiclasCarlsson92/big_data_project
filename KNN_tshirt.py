@@ -2,11 +2,6 @@ import math
 from tshirt_data_male import new_data_m
 from tshirt_data_female import new_data_f
 from collections import Counter
-from sklearn.neighbors import KNeighborsClassifier
-
-
-def knn_clf():
-    pass
 
 
 def euclidian_distance(df_data, user_data):
@@ -38,13 +33,14 @@ else:
 check_nearest = int(input('Enter K value: '))
 for i, df in enumerate(pants_data):
     dist = euclidian_distance(df, user_data)
-    distances.append({'dist': dist, 'size': sizes[i]})
+    distances.append({'distance': dist, 'size': sizes[i]})
 
-distances.sort(key=lambda data: data['dist'])
+distances.sort(key=lambda data: data['distance'])
 
 distances = distances[:check_nearest]
 
 counter = Counter([d['size'] for d in distances])
+m_common = counter.most_common()
 print(check_nearest, 'nearest neighbours')
 print(counter.most_common(check_nearest))
 print('My KNN predicts this t-shirt size for you: ', counter.most_common(1)[0][0].upper())

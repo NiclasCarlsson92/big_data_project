@@ -2,11 +2,6 @@ import math
 from pants_data_male import pants_data_m
 from pants_data_female import pants_data_f
 from collections import Counter
-from sklearn.neighbors import KNeighborsClassifier
-
-
-def knn_clf():
-    pass
 
 
 def euclidian_distance(df_data, user_data):
