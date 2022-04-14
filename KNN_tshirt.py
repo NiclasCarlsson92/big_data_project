@@ -64,15 +64,16 @@ model.fit(X, y)
 predicted = model.predict([user_data])
 print('SKlearn-KNN predicts this t-shirt size for you: ', predicted)
 print('*' * 40)
-
+X_dt = None
+y_dt = None
 if user_sex == 0:
-    X = list(zip(new_data_m['stature'], new_data_m['weightkg']))
-    y = list(new_data_m['size'])
+    X_dt = list(zip(new_data_m['stature'], new_data_m['weightkg']))
+    y_dt = list(new_data_m['size'])
 else:
-    X = list(zip(new_data_f['stature'], new_data_f['weightkg']))
-    y = list(new_data_f['size'])
+    X_dt = list(zip(new_data_f['stature'], new_data_f['weightkg']))
+    y_dt = list(new_data_f['size'])
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=1)
+X_train, X_test, y_train, y_test = train_test_split(X_dt, y_dt, test_size=0.3, random_state=1)
 clf = DecisionTreeClassifier()
 clf = clf.fit(X_train, y_train)
 y_pred = clf.predict([[user_length, user_weight]])

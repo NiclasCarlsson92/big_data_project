@@ -1,5 +1,4 @@
 import math
-
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
@@ -65,15 +64,16 @@ model.fit(X, y)
 predicted = model.predict([user_data])
 print('SKlearn-KNN predicts this pants size for you: ', predicted)
 print('*' * 40)
-
+X_dt = None
+y_dt = None
 if user_sex == 0:
-    X = list(zip(pants_data_m['stature'], pants_data_m['weightkg']))
-    y = list(pants_data_m['size'])
+    X_dt = list(zip(pants_data_m['stature'], pants_data_m['weightkg']))
+    y_dt = list(pants_data_m['size'])
 else:
-    X = list(zip(pants_data_f['stature'], pants_data_f['weightkg']))
-    y = list(pants_data_f['size'])
+    X_dt = list(zip(pants_data_f['stature'], pants_data_f['weightkg']))
+    y_dt = list(pants_data_f['size'])
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=1)
+X_train, X_test, y_train, y_test = train_test_split(X_dt, y_dt, test_size=0.3, random_state=1)
 clf = DecisionTreeClassifier()
 clf = clf.fit(X_train, y_train)
 y_pred = clf.predict([[user_length, user_weight]])

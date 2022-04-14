@@ -16,7 +16,7 @@ for butt, waist in zip(pants_data_f['buttockcircumference'], pants_data_f['waist
             color.append('slategrey')
         else:
             size.append('xs')
-            color.append('asd')
+            color.append('pink')
     elif waist <= 720:
         if butt >= 960:
             size.append('medium')

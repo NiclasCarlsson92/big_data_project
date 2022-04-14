@@ -14,7 +14,7 @@ for crotch, waist in zip(pants_data_m['crotchheight'], pants_data_m['waistcircum
             color.append('slategrey')
         else:
             size.append('small')
-            color.append('asd')
+            color.append('pink')
     elif crotch <= 860:
         if waist >= 850:
             size.append('large')
